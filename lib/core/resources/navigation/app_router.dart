@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movie_app/core/resources/navigation/app_routes.dart';
-import 'package:movie_app/features/main/presentation/screens/main_screen.dart';
+import 'package:movie_app/core/presentation/screens/main_screen.dart';
+import 'package:movie_app/features/movie/presentation/screens/movie_screen.dart';
 
 class AppRouter {
   final GoRouter router = GoRouter(
@@ -14,18 +15,7 @@ class AppRouter {
         routes: [
           GoRoute(
             path: AppRoutes.moviesScreen,
-            builder: (context, state) => Scaffold(
-              body: Center(
-                child: Text(
-                  'Movies Screen',
-                  style: TextStyle(
-                    color: Color(0xffef233c),
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
+            builder: (context, state) => MovieScreen(),
           ),
           GoRoute(
             path: AppRoutes.showsScreen,
